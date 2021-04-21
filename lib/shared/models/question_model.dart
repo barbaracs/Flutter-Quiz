@@ -2,8 +2,8 @@ import 'package:dev_quiz/shared/models/answer_model.dart';
 
 class QuestionModel {
   final String title;
-  final List<AnswerModel> answer;
+  final List<AnswerModel> answers;
 
-  QuestionModel({required this.title, required this.answer})
-      : assert(answer.length == 4);
+  QuestionModel({required this.title, required this.answers})
+      : assert(answers.length == 4);
 }
