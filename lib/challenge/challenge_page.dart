@@ -52,6 +52,7 @@ class _ChallengePageState extends State<ChallengePage> {
             ),
           )),
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: widget.questions
             .map(
@@ -62,14 +63,19 @@ class _ChallengePageState extends State<ChallengePage> {
       bottomNavigationBar: SafeArea(
         bottom: true,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Expanded(
                   child: NextButtonWidget.white(
-                label: "Cancelar",
-                onTap: () {},
+                label: "Pular",
+                onTap: () {
+                  pageController.nextPage(
+                    duration: Duration(milliseconds: 100),
+                    curve: Curves.linear,
+                  );
+                },
               )),
               SizedBox(width: 7),
               Expanded(
