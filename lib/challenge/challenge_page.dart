@@ -21,12 +21,17 @@ class _ChallengePageState extends State<ChallengePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BackButton(),
+                IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 QuestionIndicatorWidget(),
               ],
             ),
           )),
-      body: QuizWidget(title: "O que o flutter faz em sua totalidade?"),
+      body: QuizWidget(title: "O que o Flutter faz em sua totalidade?"),
       bottomNavigationBar: SafeArea(
         bottom: true,
         child: Padding(
