@@ -1,9 +1,17 @@
+import 'package:flutter/material.dart';
+
 import 'package:dev_quiz/challenge/widgets/next_button/next_button_widget.dart';
 import 'package:dev_quiz/core/core.dart';
 import 'package:dev_quiz/home/home_page.dart';
-import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
+  final String title;
+
+  const ResultPage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +36,7 @@ class ResultPage extends StatelessWidget {
                     style: AppTextStyles.body,
                     children: [
                       TextSpan(
-                        text: "\nGerenciamento de Estado",
+                        text: "\n$title",
                         style: AppTextStyles.bodyBold,
                       ),
                       TextSpan(
@@ -65,11 +73,7 @@ class ResultPage extends StatelessWidget {
                         child: NextButtonWidget.white(
                           label: "Voltar ao início",
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomePage(),
-                                ));
+                            Navigator.pop(context);
                           },
                         ),
                       ),
