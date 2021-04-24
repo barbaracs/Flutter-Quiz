@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-
-import 'package:dev_quiz/challenge/widgets/next_button/next_button_widget.dart';
 import 'package:dev_quiz/core/core.dart';
-import 'package:dev_quiz/home/home_page.dart';
+import 'package:dev_quiz/challenge/widgets/next_button/next_button_widget.dart';
 
 class ResultPage extends StatelessWidget {
   final String title;
+  final int length;
+  final int result;
 
   const ResultPage({
     Key? key,
     required this.title,
+    required this.length,
+    required this.result,
   }) : super(key: key);
 
   @override
@@ -40,7 +42,7 @@ class ResultPage extends StatelessWidget {
                         style: AppTextStyles.bodyBold,
                       ),
                       TextSpan(
-                        text: "\ncom 6 de 10 acertos.",
+                        text: "\ncom $result de $length acertos.",
                         style: AppTextStyles.body,
                       ),
                     ],
